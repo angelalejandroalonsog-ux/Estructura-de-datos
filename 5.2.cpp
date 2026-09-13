@@ -14,17 +14,15 @@ private:
 
 public:
     Pila();
-    void operator++(T);
-    void operator--(T *);
+    void operator+(T );
+    void operator-(T*);
     int PilaLlena();
     int PilaVacia();
 };
 
-/* Constructor por omisión: asigna -1 al Tope indicando que la pila está vacía */
 template <class T>
 Pila<T>::Pila() : Tope(-1) {}
 
-/* Método que evalúa si la pila está llena */
 template <class T>
 int Pila<T>::PilaLlena() {
     if (Tope == MAX - 1)
@@ -33,7 +31,7 @@ int Pila<T>::PilaLlena() {
         return 0;
 }
 
-/* Método que evalúa si la pila está vacía */
+
 template <class T>
 int Pila<T>::PilaVacia() {
     if (Tope == -1)
@@ -44,31 +42,29 @@ int Pila<T>::PilaVacia() {
 
 /* Operador ++ sobrecargado: inserta un elemento en la pila */
 template <class T>
-void Pila<T>::operator++(T Valor) {
+void Pila<T>::operator+(T Valor) {
     Tope++;
     EspacioPila[Tope] = Valor;
 }
 
 /* Operador -- sobrecargado: elimina un elemento de la pila */
 template <class T>
-void Pila<T>::operator--(T *Valor) {
+void Pila<T>::operator-(T *Valor) {
     *Valor = EspacioPila[Tope];
     Tope--;
 }
 
-/* Función que usa la sobrecarga de operadores definida en la clase Pila */
-void UsaSobrecargaOperadores() {
+int main(){
     Pila<int> ObjPila;
     int Indice;
-
     /* Si la pila está vacía se le agregan MAX elementos */
     if (ObjPila.PilaVacia()){
         for (Indice = 0; Indice < MAX; Indice++)
-            ObjPila++(Indice * 2);
+            ObjPila +(Indice * 2);
             }
     /* Mientras la pila no se vacíe, se quita un elemento y se imprime */
     while (!ObjPila.PilaVacia()) {
-        ObjPila--(&Indice);
-        cout << '\n' << Indice;
+        ObjPila -(&Indice);
+        cout <<Indice<<endl;
     }
 }
