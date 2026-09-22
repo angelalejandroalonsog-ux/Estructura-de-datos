@@ -8,6 +8,7 @@ using std::setw;
 using std::cout;
 using std::cin;
 using std::endl; //wtf qué es todo esto
+//ya sé qué es todo esto...
 
 
 ostream &operator<<(ostream &salida,const numeroTelefonico &numero){
