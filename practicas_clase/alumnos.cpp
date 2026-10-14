@@ -1,4 +1,5 @@
 /*
+    USO DE 'ws'
     Alonso Gonzalez Angel Alejandro
     Altamirano Ponce Jesus Eduardo
     Asencio Saldivar Carlos Saul
